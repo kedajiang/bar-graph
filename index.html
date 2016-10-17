@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="utf-8">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<title>Nintendo vs Playstation</title>
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+</head>
+
+
+<style>
+	html, body {
+		margin: 0;
+	}
+ 	.bar--negative {
+  	fill: #05015b;
+}
+
+	.bar--positive {
+  	fill: #dd002a;
+}
+
+	#chart {
+		width: 960px;
+		height: 2000px;
+		position: absolute;
+		top: 600px;
+		left: 50%;
+		margin-left: -480px;
+		z-index: -1;
+	}
+
+	#title {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 4em;
+		font-weight: bold;
+		margin-left: -5.5%;
+		clear: both;
+		text-align: center;
+		padding-top: 10%;
+	}
+
+	.bar1 {
+		width: 45%;
+		height: 20px;
+		background-color: #05015b;
+		float: left;
+		position: relative;
+	}
+
+	.bar2{
+		width: 45%;
+		height: 20px;
+		background-color: #dd002a;
+		float: right;
+		position: relative;
+
+	}
+
+	#body {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 2.5em;
+		font-weight: bold;
+		margin: auto;
+		clear: both;
+		text-align: center;
+		padding-top: 40px;
+	}
+
+	#description {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 1.6em;
+		font-weight: bold;
+		margin: auto;
+		clear: both;
+		text-align: center;
+		padding-top: 40px;
+		width: 60%;
+	}
+
+	h6 {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 1em;
+		color: #cccccc;
+	}
+
+	.scale{
+		margin-left: 23.8%;
+		z-index: 15;
+		clear: both;
+		position: fixed;
+	}
+
+	h5 {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 2.2em;
+		color: #d7d7d7;
+	}
+
+	.date {
+		z-index: 15;
+		clear: both;
+		text-align: center;
+		margin-top: 190px;
+	}
+
+	#redDot1 {
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		background-color: #dd002a;
+		position: relative;
+		z-index: 20;
+		left: 800px;
+		top: 155px;
+	}
+
+	#redDot1:hover {
+		opacity: 0.5;
+	}
+
+	h4 {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 2em;
+		color: #dd002a;
+		z-index: 20;
+	}
+
+	#des1 {
+		position: absolute;
+		left: 850px;
+		top: 650px;
+  		visibility: hidden;
+	}
+
+
+	#redDot2 {
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		background-color: #dd002a;
+		position: relative;
+		left: 700px;
+		top: 630px;
+	}
+
+	#redDot2:hover {
+		opacity: 0.5;
+	}
+
+	#des2 {
+		position: absolute;
+		left: 750px;
+		top: 1150px;
+		visibility: hidden;
+	}
+
+	#blueDot1 {
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		background-color: #05015b;
+		position: relative;
+		z-index: 20;
+		left: 300px;
+		top: 160px;
+	}
+
+	#blueDot1:hover {
+		opacity: 0.5;
+	}
+
+	#des3 {
+		color:#05015b;
+		position: absolute;
+		text-align: right;
+		left: 80px;
+		top: 700px;
+		visibility: hidden;
+	}
+
+	#blueDot2 {
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		background-color: #05015b;
+		position: relative;
+		z-index: 20;
+		left: 300px;
+		top: 420px;
+	}
+
+	#blueDot2:hover {
+		opacity: 0.5;
+	}
+
+	#des4 {
+		color: #05015b;
+		position: absolute;
+		text-align: right;
+		left: 80px;
+		top: 970px;
+		visibility: hidden;
+	}
+
+	}
+</style>
+
+<body>
+	<div id="title">Playstation &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNintendo</div>
+	<div class="bar1"></div>
+	<div class="bar2"></div>
+	<div id="body">POPULARITY THROUGH TIME</br>
+		2004.1 – 2016.8</div>
+	<div id="description">The bar graph below compares the popularity between two Japanese gaming companies – Playstation (Sony) and Nintendo – by showing how much popularity in percentage one subject exceeds the other. Data is collected from Google Trends and processed by function: (N-P)/(N+P)%</div>
+
+	<div id="redDot1"></div>
+	<h4 id="des1">Pokemon Go </br> release 6.6</h4>
+
+	<div id="redDot2"></div>
+	<h4 id="des2">Mario Kart 8 </br> release 5.30</h4>
+
+	<div id="blueDot1"></div>
+	<h4 id="des3">Uncharted 4 </br> release 5.10</h4>
+
+	<div id="blueDot2"></div>
+	<h4 id="des4">Bloodborne </br> release 3.24</h4>
+	
+	<h6 class="scale">50%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp40%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp30%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp20%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp10%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp0&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp10%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp20%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp30%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp40%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp50%</h6>
+
+	<h5 class="date">
+		2016</br></br></br></br></br></br>
+		2015</br></br></br></br></br></br>
+		2014</br></br></br></br></br></br>
+		2013</br></br></br></br></br></br>
+		2012</br></br></br></br></br></br>
+		2011</br></br></br></br></br></br>
+		2010</br></br></br></br></br></br>
+		2009</br></br></br></br></br></br>
+		2008</br></br></br></br></br></br>
+		2007</br></br></br></br></br></br>
+		2006</br></br></br></br></br></br>
+		2005</br></br></br></br></br></br>
+		2004
+
+	</h5>
+
+
+	<div id="chart"></div>
+
+	
+
+</body>
+ 
+<script>
+
+	document.getElementById("redDot1").onmouseover = function() {
+		document.getElementById("des1").style.visibility = 'visible';
+	}
+
+	document.getElementById("redDot1").onmouseleave = function() {
+		document.getElementById("des1").style.visibility = 'hidden';
+	}
+
+	document.getElementById("redDot2").onmouseover = function() {
+		document.getElementById("des2").style.visibility = 'visible';
+	}
+
+	document.getElementById("redDot2").onmouseleave = function() {
+		document.getElementById("des2").style.visibility = 'hidden';
+	}
+
+	document.getElementById("blueDot1").onmouseover = function() {
+		document.getElementById("des3").style.visibility = 'visible';
+	}
+
+	document.getElementById("blueDot1").onmouseleave = function() {
+		document.getElementById("des3").style.visibility = 'hidden';
+	}
+
+	document.getElementById("blueDot2").onmouseover = function() {
+		document.getElementById("des4").style.visibility = 'visible';
+	}
+
+	document.getElementById("blueDot2").onmouseleave = function() {
+		document.getElementById("des4").style.visibility = 'hidden';
+	}
+
+
+d3.csv("data/Trends.csv", function(error, data) {
+	var parseDate = d3.time.format("%Y-%m").parse;
+
+	data.forEach(function(d) {
+		d.date = parseDate(d.date);
+		d.trend = +d.trend;
+	})
+
+	var padding = {top: 20, right: 20, bottom: 20, left: 20},
+	w = 800 - padding.left - padding.right,
+	h = 3500 - padding.top - padding.bottom;
+
+	var yScale = d3.scale.ordinal()
+	.domain(data.map(function(d) {return d.date;}))
+	.rangeRoundBands([h, 0], .05);
+
+	var xScale = d3.scale.linear()
+	.domain([d3.min(data, function(d){return d.trend;}), d3.max(data, function(d){return d.trend})])
+	.range([0, w]);
+
+	var svg = d3.select("#chart")
+				.append("svg")
+				.attr("width", w + padding.left + padding.right)
+				.attr("height", h + padding.top + padding.bottom)
+    			.append("g")
+    			.attr("transform", "translate(" + padding.left + "," + padding.top + ")");
+	svg.selectAll("bar")
+      .data(data)
+      .enter().append("rect")
+      .attr("class", function(d) {return "bar bar--" + (d.trend < 0 ? "negative" : "positive");})
+      .attr("x", function(d) { return xScale(Math.min(0, d.trend));})
+      .attr("height", yScale.rangeBand())
+      .attr("y", function(d) { return yScale(d.date); })
+      .attr("width", function(d) { return (Math.abs(xScale(d.trend) - xScale(0))); });
+
+
+});
+
+</script>
