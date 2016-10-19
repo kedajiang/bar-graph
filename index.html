@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 
 <head>
 <meta charset="utf-8">
@@ -128,7 +128,7 @@
 		z-index: 15;
 		clear: both;
 		text-align: center;
-		margin-top: -50px;
+		margin-top: -90px;
 	}
 
 	#redDot1 {
@@ -510,6 +510,54 @@
 		visibility: hidden;
 	}
 
+	#blueDot7 {
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		background-color: #05015b;
+		position: relative;
+		z-index: 20;
+		left: 300px;
+		top: 2370px;
+	}
+
+	#blueDot7:hover {
+		opacity: 0.5;
+	}
+
+	#des17 {
+		color: #05015b;
+		position: absolute;
+		text-align: right;
+		left: 65px;
+		top: 3310px;
+		visibility: hidden;
+	}
+
+	#blueDot8 {
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		background-color: #05015b;
+		position: relative;
+		z-index: 20;
+		left: 300px;
+		top: 2800px;
+	}
+
+	#blueDot8:hover {
+		opacity: 0.5;
+	}
+
+	#des18 {
+		color: #05015b;
+		position: absolute;
+		text-align: right;
+		left: 65px;
+		top: 3750px;
+		visibility: hidden;
+	}
+
 	}
 </style>
 
@@ -575,7 +623,13 @@
 
 	<div id="redDot10"></div>
 	<h4 id="des16">Nintendo Wii </br> release 11.19 </br> <img src="images/wii.png" /></h4>
-	
+
+	<div id="blueDot7"></div>
+	<h4 id="des17">Playstation 3 </br> release 11.11 </br> <img src="images/ps3.jpg" /></h4>
+
+	<div id="blueDot8"></div>
+	<h4 id="des18">Playstation </br> Portable </br> release 3.24 </br> <img src="images/psp.png" /></h4>
+
 	<h6 class="scale">50%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp40%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp30%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp20%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp10%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp0&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp10%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp20%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp30%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp40%&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp50%</h6>
 
 	<h5 class="date">
@@ -598,10 +652,10 @@
 
 	<div id="chart"></div>
 
-	
+
 
 </body>
- 
+
 <script>
 
 	document.getElementById("redDot1").onmouseover = function() {
@@ -733,6 +787,21 @@
 		document.getElementById("des16").style.visibility = 'hidden';
 	}
 
+	document.getElementById("blueDot7").onmouseover = function() {
+		document.getElementById("des17").style.visibility = 'visible';
+	}
+
+	document.getElementById("blueDot7").onmouseleave = function() {
+		document.getElementById("des17").style.visibility = 'hidden';
+	}
+
+	document.getElementById("blueDot8").onmouseover = function() {
+		document.getElementById("des18").style.visibility = 'visible';
+	}
+
+	document.getElementById("blueDot8").onmouseleave = function() {
+		document.getElementById("des18").style.visibility = 'hidden';
+	}
 
 
 
